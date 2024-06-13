@@ -23,9 +23,13 @@ public class QuickSort {
         // Repeat until the two pointers cross
                 while(i<j){
                     // Move the left pointer to the right as long as elements are less than or equal to the pivot
+                    //finding the first element that is greater than the pivot.(pivot>= arr[i]) and i canonot exceed the array's boundary.(i<= high-1)
                     while(i<=high-1 && arr[i] <= pivot){
+                        //if we cannot use high-1 we get arrayoutofboundindex error
+                        //we are using equal in this  arr[i] <= pivot because if there is duplicate number like two's 4 then we have to decide where we put like pehle ya baad.
                         i++;
                     }
+                    //this will find the element that is lesser than pivot
                     // Move the right pointer to the left as long as elements are greater than the pivot
                  while(low+1<=j && arr[j] > pivot){
                      j--;
@@ -47,10 +51,10 @@ public class QuickSort {
     static void quicksort(int arr[], int low, int high){
         // Perform quicksort only if the range is valid
         if(low<high) {
-            // Partition the array and get the pivot index
+            //Partition the array and get the pivot index
             int pivot = partition(arr,low,high);
             // Recursively sort elements before and after the pivot
-            quicksort(arr, low, pivot - 1);
+            quicksort(arr, low, pivot-1);
             quicksort(arr,pivot+1,high);
         }
     }

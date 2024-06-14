@@ -10,6 +10,9 @@ Output: 3
 Explanation: The answer is abc with length of 3.
  */
 
+
+
+/*
 import java.util.HashSet;
 import java.util.Set;
 
@@ -44,5 +47,36 @@ public class LongestSubstringwithoutrepeating {
     public static void main(String[] args) {
    String s = "abcabcbb";
         System.out.print(longestsubstring(s));
+    }
+}
+
+
+ */
+
+
+import java.util.HashMap;
+
+//optimized Appproach Using the Sliding Window
+//in this approach we use two pointer left and right and hashmap to store the character, in hashmap we store character with the index
+//initialize our maxlength =0;
+public class LongestSubstringwithoutrepeating {
+    public static int Substringwithoutrepeating(String S){
+        HashMap<Character, Integer> map = new HashMap<>();
+        int left =0;
+        int right =0;
+        int maxlength =0;
+        while(right<S.length()){
+            if(map.containsKey(S.charAt(right))){
+                left = Math.max(map.get(S.charAt(right))+1, left);
+            }
+            map.put(S.charAt(right), right);
+            maxlength = Math.max(maxlength, right-left+1);
+            right++;
+        }
+        return maxlength;
+    }
+    public static void main(String[] args) {
+   String S = "cadbzabcd";
+   System.out.print(Substringwithoutrepeating(S));
     }
 }

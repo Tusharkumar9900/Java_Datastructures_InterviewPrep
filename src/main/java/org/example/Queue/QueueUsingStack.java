@@ -18,7 +18,7 @@ public class QueueUsingStack {
    static Stack<Integer> stack1 = new Stack<>();
    static Stack<Integer> stack2 = new Stack<>();
 
-   //CReated a Empty method
+   //Created a Empty method
     public static boolean isEmpty(){
         return stack1.isEmpty();
     }

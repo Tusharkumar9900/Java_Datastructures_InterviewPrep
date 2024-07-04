@@ -8,6 +8,7 @@ public class SingletonPatternEarlyInstantiation {
 
 
     public static SingletonPatternEarlyInstantiation getSingletonPatternEarlyInstantiation(){
+
         return singleton;
     }
 }

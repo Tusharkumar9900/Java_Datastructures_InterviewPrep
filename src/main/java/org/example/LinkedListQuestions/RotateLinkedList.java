@@ -21,7 +21,7 @@ Rotate 3: 8 -> 9 -> 2 -> 4 -> 7
 public class RotateLinkedList {
     static Node head;
     static Node tail;
-    static class Node{
+   public  static class Node{
         Node next;
         int data;
 

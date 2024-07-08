@@ -70,7 +70,7 @@ class Computer{
 
         //declaring setters
         //here we are returning ComputerBuilder So that we can return the class object
-        //here we are doing method chaining
+        //here we are doing method chaining :- Method-chaining is implemented by a series of methods that return the this reference for a class instance.
         public ComputerBuilder setHDD(String HDD) {
             this.HDD = HDD;
             return this;

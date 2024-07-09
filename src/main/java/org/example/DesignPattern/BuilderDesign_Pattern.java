@@ -35,6 +35,7 @@ class Computer{
 
 
     //creating private constructor
+    //here we are passing the builder object i.e -> ComputerBuilder
     private Computer(ComputerBuilder builder){
         this.HDD= builder.HDD;
         this.RAM = builder.RAM;

@@ -13,7 +13,7 @@ Connection mysqlConnection;
 
 DbConnection(){
     try{
-        mysqlConnection = DriverManager.getConnection("url","username","Password");
+        mysqlConnection = DriverManager.getConnection("jdbc:mysql://localhost:3307/persons","root","Nmklop@7799");
     }
     catch(Exception e){
         e.printStackTrace();
@@ -32,7 +32,7 @@ class DbConnectionPoolManager {
     //step -1 initalize the variable with private static
     private static DbConnectionPoolManager dbConnectionPoolManagerInstance = null;
 
-    //creating a constructor, and make this constructor private for singletn pattern (step -2)
+    //creating a constructor, and make this constructor private for singleton pattern (step -2)
     private DbConnectionPoolManager() {
         for (int i = 0; i < INITIAL_POOL_SIZE; i++) {
             freeConnectionInPool.add(new DbConnection());
